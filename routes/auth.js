@@ -10,6 +10,9 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/signup', (req, res, next) => {
+  if (req.session.currentUser) {
+    return res.redirect('/');
+  }
   res.render('signup');
 });
 

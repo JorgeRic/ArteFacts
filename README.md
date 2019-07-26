@@ -67,21 +67,20 @@ The MVP is to build a mobile app to allow artists uploading their jobs via filli
 
 |Method|URL|Description|
 |------|---|-----------|
-
-|GET| '/' |Renders homepage|
-|GET| '/auth/signup' |Renders the signup page|
-|POST| '/auth/signup' |Add info of user into ddbb|
-|GET| '/auth/login' |Renders the login page|
-|POST| '/auth/login' |Check if user is in the ddbb & redirects to home|
-|GET| '/auth/logout' |End user session. Redirect to home|
-|GET| '/profile/arts' |Renders the user's page with uploaded arts if they exist (if array is empty, we display a message)|
-|POST| '/profile/arts' |Updates the user's page with uploaded arts if they exist (if array is empty, we display a message)|
-|POST| '/profile/arts/:id/delete' |Updates the user's page without deleted arts|
-|GET| '/profile/favorites' |Renders the user's page with favorite arts if they exist (if the array is empty we display a message & a link to home)|
-|POST| '/profile/favorites' |Updates the user's page with favorite arts if they exist (if the array is empty we display a message & a link to home)|
-|POST| '/profile/favorites/:id/delete' |Updates the user's page without deleted favorite arts|
-|GET| '/create' |Renders the form where user can upload the art|
-|POST| '/create' |Updated the ddbb with new art added by artist. Renders the uploaded art in the top of the /create view|
+|GET|'/'|Renders homepage|
+|GET|'/auth/signup'|Renders the signup page|
+|POST|'/auth/signup'|Add info of user into ddbb|
+|GET|'/auth/login'|Renders the login page|
+|POST|'/auth/login'|Check if user is in the ddbb & redirects to home|
+|GET|'/auth/logout'|End user session. Redirect to home|
+|GET|'/profile/arts'|Renders the user's page with uploaded arts if they exist (if array is empty, we display a message)|
+|POST|'/profile/arts'|Updates the user's page with uploaded arts if they exist (if array is empty, we display a message)|
+|POST|'/profile/arts/:id/delete'|Updates the user's page without deleted arts|
+|GET|'/profile/favorites'|Renders the user's page with favorite arts if they exist (if the array is empty we display a message & a link to home)|
+|POST|'/profile/favorites'|Updates the user's page with favorite arts if they exist (if the array is empty we display a message & a link to home)|
+|POST|'/profile/favorites/:id/delete'|Updates the user's page without deleted favorite arts|
+|GET|'/create' |Renders the form where user can upload the art|
+|POST|'/create'|Updated the ddbb with new art added by artist. Renders the uploaded art in the top of the /create view|
 
 
 ## Design framework

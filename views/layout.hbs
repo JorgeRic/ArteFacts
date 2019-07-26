@@ -1,16 +1,42 @@
-
-
 <!doctype html>
 <html lang="en">
 
 <head>
- <title>{{title}}</title>
+  <title>{{title}}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/reset.css">
 </head>
 
 <body>
-   {{{body}}}
+  <header class="header">
+    <div class="burguer">
+      <div class="burguer-bar bar-1">hol</div>
+      <div class="burguer-bar bar-2">hol</div>
+      <div class="burguer-bar bar-3">hol</div>
+    </div>
+    <nav class="header-navbar">
+      <h1><a class="header-brand-logo" href="/"><img src="/images/artefacts-logo.svg" alt="Artefacts brand logo"></a>
+      </h1>
+      <ul class="navbar-list">
+        <li class="navbar-list-item"><a class="navbar-list-link">Sign up</a></li>
+        <li class="navbar-list-item"><a class="navbar-list-link">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main-content">
+    {{{body}}}
+  </main>
+  <footer class="footer">
+    <a class="footer-brand-logo" href="/"><img src="/images/artefacts-logo-w.svg" alt="Artefacts brand logo"></a>
+    <ul class="footer-list">
+      <li class="footer-list-item"><a href="https://www.ironhack.com/en/locations/barcelona">Ironhack</a></li>
+      <li class="footer-list-item"><a href="https://github.com/JorgeRic">Jorge Rico</a> & <a
+          href="https://github.com/annacv">Anna Condal</a></li>
+      <li class="footer-list-item"><a href="https://github.com/JorgeRic/ArteFacts">Github</a></li>
+    </ul>
+  </footer>
 </body>
+
 </html>

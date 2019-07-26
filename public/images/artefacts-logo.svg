@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="32px" viewBox="0 0 45 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56 (81588) - https://sketch.com -->
+    <title>BRAND</title>
+    <desc>Created with Sketch.</desc>
+    <g id="BRAND" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#65D4FB" x="0" y="0" width="10" height="10"></rect>
+        <g id="Group" transform="translate(-11.000000, 1.000000)" fill="#65D4FB">
+            <text id="arte" font-family="TiemposHeadline-Black, Tiempos Headline" font-size="20" font-weight="700">
+                <tspan x="16.13" y="16">arte</tspan>
+            </text>
+            <text id="facts" transform="translate(36.500000, 22.000000) scale(1, -1) translate(-36.500000, -22.000000) " font-family="TiemposText-Regular, Tiempos Text" font-size="18" font-weight="normal">
+                <tspan x="16.358" y="27">facts</tspan>
+            </text>
+        </g>
+        <g id="Group" transform="translate(-11.000000, 0.400000)" fill="#003A50">
+            <text id="arte" font-family="TiemposHeadline-Black, Tiempos Headline" font-size="20" font-weight="700">
+                <tspan x="16.13" y="16">arte</tspan>
+            </text>
+            <text id="facts" transform="translate(36.500000, 22.000000) scale(1, -1) translate(-36.500000, -22.000000) " font-family="TiemposText-Regular, Tiempos Text" font-size="18" font-weight="normal">
+                <tspan x="16.358" y="27">facts</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

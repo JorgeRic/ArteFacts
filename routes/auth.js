@@ -40,7 +40,11 @@ router.post('/signup', isLoggedIn, isFormFilled, async (req, res, next) => {
 });
 
 router.get('/login', isLoggedIn, (req, res, next) => {
-  res.render('login');
+  const data = {
+    messages: req.flash('errorFormNotFilled'),
+    formData: req.flash('errorDataForm')
+  };
+  res.render('login', data);
 });
 
 router.post('/login', isLoggedIn, isFormFilled, async (req, res, next) => {

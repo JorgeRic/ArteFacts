@@ -19,6 +19,9 @@ const isFormFilled = (req, res, next) => {
     if (username) {
       req.flash('errorDataForm', username);
     }
+    if (password) {
+      req.flash('errorDataForm', password);
+    }
     return res.redirect(req.originalUrl);
   }
   next();

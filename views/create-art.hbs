@@ -1,0 +1,15 @@
+<form action="/arts/create-art" method="POST">
+  <label for="author"><input type="text" name="author" placeholder="Tu nombre" required></label>
+  <label for="title"><input type="text" name="title" placeholder="Tu título" required></label>
+  <label for="contact"><input type="text" name="contact" placeholder="Contacto" required></label>
+  <label for="art-type">Tipo de arte</label>
+  <select id="art-type" name="artType" required>
+    <option value="Pintura">Pintura</option>
+    <option value="Fotografía">Fotografía</option>
+    <option value="Escultura">Escultura</option>
+    <option value="Ilustración">Ilustración</option>
+    <option value="Collage">Collage</option>
+  </select>
+  <label><input type="text" name="image" placeholder="Sube la imagen del arte"></label>
+  <button type="submit">Subir arte</button>
+</form>

@@ -1,2 +1,15 @@
 <h1>private page</h1>
-<p>{{username}}</p>
+
+<a href="/arts/create-art"><button>Subir arte</button></a>
+
+<section class="art-list">
+  {{#each arts}}
+  <article>
+    <p>{{title}}</p>
+    <p>{{author}}</p>
+    <p>{{artType}}</p>
+    <img src="{{image}}">
+  </article>
+  {{/each}}
+
+</section>

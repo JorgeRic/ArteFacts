@@ -24,7 +24,7 @@ const arteSchema = new Schema({
   },
   image: {
     type: String,
-    default: 'https://unsplash.com/photos/fmWUC1gaDv8'
+    default: 'http://www.hollywoodprimaryschool.co.uk/wp-content/uploads/3402463-KNVHBTVS-7.jpg'
   }
 }, {
   timestamps: true

@@ -10,6 +10,10 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 require('dotenv').config();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 07c3869ba37c7c8c0d9fa1fb3af2d69eb262d222
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
@@ -18,7 +22,7 @@ const artsRouter = require('./routes/arts');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/Proyecto-arte', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
@@ -29,7 +33,11 @@ app.use(session({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60 // 1 day
   }),
+<<<<<<< HEAD
   secret: `${process.env.SECRET}`,
+=======
+  secret: process.env.SECRET,
+>>>>>>> 07c3869ba37c7c8c0d9fa1fb3af2d69eb262d222
   resave: true,
   saveUninitialized: true,
   cookie: {

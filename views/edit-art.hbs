@@ -1,5 +1,5 @@
 <h2>Modificar arte</h2>
-<form class="art-form" action="/arts/{{_id}}/edit-art" method="POST">
+<form class="art-form" action="/arts/{{_id}}/edit-art" method="POST" enctype="multipart/form-data">
   <label for="author"><input type="text" name="author" value={{author}}></label>
   <label for="title"><input type="text" name="title" value={{title}}></label>
   <label for="contact"><input type="text" name="contact" value={{contact}}></label>
@@ -12,7 +12,8 @@
     <option value="Ilustración">Ilustración</option>
     <option value="Collage">Collage</option>
   </select>
-  <img src="{{image}}">
-  <label><input type="text" name="image" value="Sube la imagen del arte"></label>
+  
+  <label><input type="file" name="image" placeholder="Sube la imagen del arte"></label>
   <button type="submit">Actualizar datos</button>
+  <img src="{{image}}">
 </form>

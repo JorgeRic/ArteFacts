@@ -6,6 +6,7 @@ const router = express.Router();
 const { isNotLoggedIn } = require('../middlewares/authMiddlewares');
 const User = require('../models/User');
 const Art = require('../models/Art.js');
+const parser = require('../config/cloudinary');
 
 // Create art (get the form & post the info filled)
 router.get('/create-art', isNotLoggedIn, async (req, res, next) => {
@@ -17,15 +18,17 @@ router.get('/create-art', isNotLoggedIn, async (req, res, next) => {
   }
 });
 
-router.post('/create-art', isNotLoggedIn, async (req, res, next) => {
+router.post('/create-art', isNotLoggedIn, parser.single('image'), async (req, res, next) => {
   const { author, contact, title, artType } = req.body;
+  const image = req.file.secure_url;
   try {
     console.log(req.body);
     const art = await Art.create({
       author,
       contact,
       title,
-      artType
+      artType,
+      image
     });
     const artId = art._id;
     const userId = req.session.currentUser._id;
@@ -47,15 +50,18 @@ router.get('/:id/edit-art', async (req, res, next) => {
   }
 });
 
-router.post('/:id/edit-art', async (req, res, next) => {
+router.post('/:id/edit-art', parser.single('image'), async (req, res, next) => {
+  const image = req.file.secure_url;
   try {
     const { id } = req.params;
+
     const { author, contact, title, artType } = req.body;
     const update = {
       author,
       contact,
       title,
-      artType
+      artType,
+      image
     };
     await Art.findByIdAndUpdate(id, update, { new: true });
     res.redirect('/users/profile');

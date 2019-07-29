@@ -1,4 +1,4 @@
-<form class="art-form" action="/arts/create-art" method="POST">
+<form class="art-form" action="/arts/create-art" method="POST" enctype="multipart/form-data">
   <label for="author"><input type="text" name="author" placeholder="Tu nombre" required></label>
   <label for="title"><input type="text" name="title" placeholder="Tu título" required></label>
   <label for="contact"><input type="text" name="contact" placeholder="Contacto" required></label>
@@ -10,6 +10,7 @@
     <option value="Ilustración">Ilustración</option>
     <option value="Collage">Collage</option>
   </select>
-  <label><input type="text" name="image" placeholder="Sube la imagen del arte"></label>
+
+  <label><input type="file" name="image" placeholder="Sube la imagen del arte"></label>
   <button type="submit">Subir arte</button>
 </form>

@@ -1,0 +1,18 @@
+<h2>Modificar arte</h2>
+<form class="art-form" action="/arts/{{_id}}/edit-art" method="POST">
+  <label for="author"><input type="text" name="author" value={{author}}></label>
+  <label for="title"><input type="text" name="title" value={{title}}></label>
+  <label for="contact"><input type="text" name="contact" value={{contact}}></label>
+  <label for="art-type">Tipo de arte</label>
+  <select id="art-type" name="artType">
+    <option value={{artType}} selected>{{artType}}</option>
+    <option value="Pintura">Pintura</option>
+    <option value="Fotografía">Fotografía</option>
+    <option value="Escultura">Escultura</option>
+    <option value="Ilustración">Ilustración</option>
+    <option value="Collage">Collage</option>
+  </select>
+  <img src="{{image}}">
+  <label><input type="text" name="image" value="Sube la imagen del arte"></label>
+  <button type="submit">Actualizar datos</button>
+</form>

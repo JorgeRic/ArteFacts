@@ -4,22 +4,20 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 
 const User = require('../models/User');
-
+const { isLoggedIn, isNotLoggedIn, isFormFilled } = require('../middlewares/authMiddlewares');
 const saltRounds = 10;
 const router = express.Router();
 
-router.get('/signup', (req, res, next) => {
-  if (req.session.currentUser) {
-    return res.redirect('/');
-  }
-  res.render('signup');
+router.get('/signup', isLoggedIn, (req, res, next) => {
+  const data = {
+    messages: req.flash('errorFormNotFilled'),
+    formData: req.flash('errorDataForm')
+  };
+  res.render('signup', data);
 });
 
-router.post('/signup', async (req, res, next) => {
+router.post('/signup', isLoggedIn, isFormFilled, async (req, res, next) => {
   const { username, password } = req.body;
-  if (!username || !password) {
-    return res.redirect('/auth/signup');
-  }
 
   const salt = bcrypt.genSaltSync(saltRounds);
   const hashedPassword = bcrypt.hashSync(password, salt);
@@ -35,27 +33,23 @@ router.post('/signup', async (req, res, next) => {
     });
 
     req.session.currentUser = newUser;
-    res.redirect('/');
+    res.redirect('/users/profile');
   } catch (error) {
     next(error);
   }
 });
 
-router.get('/login', (req, res, next) => {
-  if (req.session.currentUser) {
-    return res.redirect('/');
-  }
-  res.render('login');
+router.get('/login', isLoggedIn, (req, res, next) => {
+  const data = {
+    messages: req.flash('errorFormNotFilled'),
+    formData: req.flash('errorDataForm')
+  };
+  res.render('login', data);
 });
 
-router.post('/login', async (req, res, next) => {
-  if (req.session.currentUser) {
-    return res.redirect('/');
-  }
+router.post('/login', isLoggedIn, isFormFilled, async (req, res, next) => {
   const { username, password } = req.body;
-  if (!username || !password) {
-    return res.redirect('/auth/login');
-  }
+
   try {
     const user = await User.findOne({ username });
     if (!user) {
@@ -63,7 +57,7 @@ router.post('/login', async (req, res, next) => {
     }
     if (bcrypt.compareSync(password, user.password)) {
       req.session.currentUser = user;
-      res.redirect('/');
+      res.redirect('/users/profile');
     } else {
       res.redirect('/auth/login');
     }
@@ -72,12 +66,9 @@ router.post('/login', async (req, res, next) => {
   }
 });
 
-router.post('/logout', (req, res, next) => {
-  if (req.session.currentUser) {
-    delete req.session.currentUser;
-    return res.redirect('/');
-  }
-  res.redirect('/');
+router.post('/logout', isNotLoggedIn, (req, res, next) => {
+  delete req.session.currentUser;
+  return res.redirect('/');
 });
 
 module.exports = router;

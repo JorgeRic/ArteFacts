@@ -1,3 +1,25 @@
+/* COLORS */
+:root {
+--white: #fff;
+--soft-blue: #dcedff;
+--light-blue: #65d4fb;
+--mid-blue: #007ba8;
+--dark-blue: #003a50;
+--dark-grey: #343f3e;
+--light-grey: #8f91a2;
+}
+
+/* LAYOUT */
+
+.header, 
+.footer {
+  padding: .5rem 1.125rem;
+}
+
+.header {
+  border-bottom: 1px solid var(--light-grey);
+}
+
 .header-navbar,
 .navbar-list {
   display: flex;
@@ -8,11 +30,14 @@
 .navbar-list-link {
   padding: 0 .5rem;
 }
-img{
-  height: auto;
-  width: 100%;
+
+.footer {
+  background-color: var(--dark-blue);
 }
 
-.favorites-btn {
-  margin-bottom: 2rem;
+.footer-list {
+  background-color: var(--soft-blue);
 }
+
+/* COMPONENTS */
+/*buttons, cards..

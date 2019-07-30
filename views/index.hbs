@@ -1,10 +1,12 @@
-<h2>{{title}}</h2>
-<p class="home-description">Welcome to {{title}}</p>
+<section class="section-intro">
+  <h2 class="main-heading">{{title}}</h2>
+  <p class="main-subtitle">{{subtitle}}</p>
+</section>
 
 <section class="art-list">
   {{#each arts}}
-  <article>
-    <img src="{{image}}">
+  <article class="card">
+    <img class="card-image" src="{{image}}">
     <form class="favorites-form" action="/arts/{{_id}}/favorite-art" method="POST">
       <button class="favorites-btn" type="submit">Añadir a favoritos</button>
     </form>

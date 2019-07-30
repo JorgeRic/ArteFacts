@@ -1,35 +1,53 @@
-<h1>private page</h1>
+<section class="section-intro">
+  <h2 class="main-heading">Galeria</h2>
+</section>
 
-<a href="/arts/create-art"><button>Subir arte</button></a>
+{{!-- <a class="create-art-btn" href="/arts/create-art"><button>Subir arte</button></a> --}}
+<nav class="arts-navbar">
+  <ul class="arts-navbar-list">
+    <li class="arts-navbar-item">
+      <span class="navbar-item-text">artes subidas</span>
+    </li>
+    <li class="arts-navbar-item">
+      <span class="navbar-item-text">artes favoritas</span>
+    </li>
+  </ul>
+</nav>
 
-<section class="art-list">
+<section class="created-art-list visible">
+  <h3 class="section-title">Galeria</h3>
   {{#each userArts.arts}}
-  <article>
-    <p>{{title}}</p>
-    <p>{{author}}</p>
-    <p>{{artType}}</p>
-    <img src={{image}} alt={{title}}>
-    <div class="form-group">
-      <a href="/arts/{{id}}/edit-art">Edit</a>
-      <form action="/arts/{{id}}/delete" method="POST">
-        <button type="submit">Delete</button>
-      </form>
+  <article class="card created-art">
+    <img class="card-image" src={{image}} alt={{title}}>
+    <div class="card-content">
+      <p class="card-title">{{title}}</p>
+      <p class="card-category">#{{artType}}</p>
+      <div class="form-group">
+        <a class="edit-art-btn" href="/arts/{{id}}/edit-art">Edit</a>
+        <form action="/arts/{{id}}/delete" method="POST">
+          <button class="delete-btn" type="submit">Delete</button>
+        </form>
+      </div>
     </div>
   </article>
   {{/each}}
 </section>
 
-<section class="favorite-list">
+<section class="favorite-list hidden">
   {{#each userFavorites.favorites}}
-  <article>
-    <p>{{title}}</p>
-    <p>{{author}}</p>
-    <p>{{artType}}</p>
+  <article class="card favourite-card">
     <img src={{image}} alt={{title}}>
-    <div class="form-group">
-      <form action="/arts/{{_id}}/favorite-art/delete" method="POST">
-        <button type="submit">Delete</button>
-      </form>
+    <div class="card-content">
+      <div class="card-owner">
+        <p class="card-title">{{author}} · {{title}}</p>
+      </div>
+      <p class="card-category">{{artType}}</p>
+      <p class="card-contact">{{contact}}</p>
+      <div class="form-group">
+        <form action="/arts/{{_id}}/favorite-art/delete" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
     </div>
   </article>
   {{/each}}

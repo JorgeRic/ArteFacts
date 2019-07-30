@@ -8,3 +8,11 @@
 .navbar-list-link {
   padding: 0 .5rem;
 }
+img{
+  height: auto;
+  width: 100%;
+}
+
+.favorites-btn {
+  margin-bottom: 2rem;
+}

@@ -51,9 +51,15 @@ router.get('/:id/edit-art', async (req, res, next) => {
 });
 
 router.post('/:id/edit-art', parser.single('image'), async (req, res, next) => {
-  const image = req.file.secure_url;
   try {
     const { id } = req.params;
+    const currentArt = await Art.findById(id);
+    let image;
+    if (req.file !== undefined) {
+      image = req.file.secure_url;
+    } else {
+      image = currentArt.image;
+    }
 
     const { author, contact, title, artType } = req.body;
     const update = {
@@ -75,6 +81,56 @@ router.post('/:id/delete', async (req, res, next) => {
   try {
     const { id } = req.params;
     await Art.findByIdAndRemove(id);
+    res.redirect('/users/profile');
+  } catch (error) {
+    next(error);
+  }
+});
+
+// Add favourite art
+// router.post('/:id/favorite-art', async (req, res, next) => {
+//   try {
+//     const artId = req.params.id;
+//     const userId = req.session.currentUser._id;
+
+//     await User.findByIdAndUpdate(userId, { $push: { favorites: artId } });
+//     res.redirect('/users/profile');
+//   } catch (error) {
+//     console.log(error);
+//     next(error);
+//   }
+// });
+
+router.post('/:id/favorite-art', async (req, res, next) => {
+  try {
+    const { artId } = req.params.id;
+    const userId = req.session.currentUser._id;
+
+    let existe = false;
+    const user = await User.findById(userId);
+    const arrayOfFavourites = user.favorites;
+    arrayOfFavourites.forEach((elem) => {
+      console.log(typeof elem);
+      console.log(typeof artId);
+      console.log(elem);
+      console.log(artId);
+      if (elem === artId) existe = true;
+    });
+    if (!existe) {
+      await User.findByIdAndUpdate(userId, { $push: { favorites: artId } });
+    }
+    res.redirect('/users/profile');
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+router.post('/:id/favorite-art/delete', async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const userId = req.session.currentUser._id;
+    await User.findByIdAndUpdate(userId, { $pull: { favorites: id } });
     res.redirect('/users/profile');
   } catch (error) {
     next(error);

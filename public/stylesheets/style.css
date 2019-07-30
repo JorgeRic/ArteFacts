@@ -1,18 +1,33 @@
 /* COLORS */
 :root {
---white: #fff;
---soft-blue: #dcedff;
---light-blue: #65d4fb;
---mid-blue: #007ba8;
---dark-blue: #003a50;
---dark-grey: #343f3e;
---light-grey: #8f91a2;
+  --white: #fff;
+  --soft-blue: #dcedff;
+  --light-blue: #65d4fb;
+  --mid-blue: #007ba8;
+  --dark-blue: #003a50;
+  --dark-grey: #343f3e;
+  --light-grey: #8f91a2;
 }
+
+/* BUTTONS */
+/* favourites btn: start-empty-icon.svg
+/* favpurites btn:visited: start-filled-icon.svg
+
+/* create-art-btn
+/* edit-art-btn
+/* delete-art-btn
+/* profile-btn
+/* login-btn
+/* signup-btn
+/* logout-btn
+/* error-btn
+
 
 /* LAYOUT */
 
 .header, 
-.footer {
+.footer-brand,
+.footer-credits {
   padding: .5rem 1.125rem;
 }
 
@@ -21,23 +36,73 @@
 }
 
 .header-navbar,
-.navbar-list {
+.navbar-list,
+.footer-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar-list-link {
+.navbar-list-link,
+.footer-list-link {
   padding: 0 .5rem;
+  color: var(--dark-blue);
 }
 
 .footer {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.footer-brand {
+  display: inline-flex;
+  justify-content: center;
   background-color: var(--dark-blue);
 }
 
-.footer-list {
+.footer-brand-logo {
+  height: 2rem;
+  width: auto;
+  padding: 4rem;
+  align-self: center;
+}
+
+.footer-credits {
   background-color: var(--soft-blue);
 }
 
-/* COMPONENTS */
-/*buttons, cards..
+/* HOME INHERITABLE STYLES */
+.section-intro {
+  padding: 2.5rem 0;
+}
+
+.main-heading {
+  font-size: 1.5rem;
+  color: var(--dark-blue);
+}
+
+.main-subtitle {
+  font-size: 1.125rem;
+  color: var(--soft-grey);
+  margin-top: 1rem;
+}
+
+/* .art-list {
+  display: flex;
+} */
+
+.card {
+  padding: 1rem;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+/* PROFILE STYLES */
+.section-title {
+  font-size: 1.25rem;
+  color: var(--mid-blue);
+  padding: 42px 0;
+}

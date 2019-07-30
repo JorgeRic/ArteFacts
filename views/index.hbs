@@ -7,8 +7,13 @@
     <p>{{title}}</p>
     <p>{{author}}</p>
     <p>{{artType}}</p>
-    <img src="{{image}}">
+    <form class="art-form" action="/" method="POST">
+   <img src="{{image}}">
+    <button type="submit">Añadir a favoritos</button>
+   </form>
   </article>
   {{/each}}
 
 </section>
+
+

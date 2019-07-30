@@ -18,6 +18,10 @@ const userSchema = new Schema({
   arts: [{
     type: ObjectId,
     ref: 'Art'
+  }],
+  favorites: [{
+    type: ObjectId,
+    ref: 'Art'
   }]
 }, {
   timestamps: true

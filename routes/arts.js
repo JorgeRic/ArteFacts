@@ -51,9 +51,17 @@ router.get('/:id/edit-art', async (req, res, next) => {
 });
 
 router.post('/:id/edit-art', parser.single('image'), async (req, res, next) => {
-  const image = req.file.secure_url;
   try {
     const { id } = req.params;
+    const currentArt = await Art.findById(id);
+    let image;
+    if (req.file !== undefined) {
+      image = req.file.secure_url;
+    } else {
+      image = currentArt.image;
+    }
+    console.log(image);
+    console.log('jnfkmkdvd');
 
     const { author, contact, title, artType } = req.body;
     const update = {

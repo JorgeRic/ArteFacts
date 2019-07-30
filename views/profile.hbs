@@ -2,18 +2,32 @@
 
 <a href="/arts/create-art"><button>Subir arte</button></a>
 
-
-
 <section class="art-list">
-  {{#each arts}}
+  {{#each userArts.arts}}
   <article>
     <p>{{title}}</p>
     <p>{{author}}</p>
     <p>{{artType}}</p>
-    <img src={{image}} alt={{title}} >
+    <img src={{image}} alt={{title}}>
     <div class="form-group">
       <a href="/arts/{{id}}/edit-art">Edit</a>
       <form action="/arts/{{id}}/delete" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    </div>
+  </article>
+  {{/each}}
+</section>
+
+<section class="favorite-list">
+  {{#each userFavorites.favorites}}
+  <article>
+    <p>{{title}}</p>
+    <p>{{author}}</p>
+    <p>{{artType}}</p>
+    <img src={{image}} alt={{title}}>
+    <div class="form-group">
+      <form action="/arts/{{_id}}/favorite-art/delete" method="POST">
         <button type="submit">Delete</button>
       </form>
     </div>

@@ -60,8 +60,6 @@ router.post('/:id/edit-art', parser.single('image'), async (req, res, next) => {
     } else {
       image = currentArt.image;
     }
-    console.log(image);
-    console.log('jnfkmkdvd');
 
     const { author, contact, title, artType } = req.body;
     const update = {
@@ -83,6 +81,50 @@ router.post('/:id/delete', async (req, res, next) => {
   try {
     const { id } = req.params;
     await Art.findByIdAndRemove(id);
+    res.redirect('/users/profile');
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/:id/favorite-art', async (req, res, next) => {
+  try {
+    const artId = req.params.id;
+    const userId = req.session.currentUser._id;
+
+    await User.findByIdAndUpdate(userId, { $push: { favorites: artId } });
+    res.redirect('/users/profile');
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+// router.post('/:id/favorite-art', async (req, res, next) => {
+//   try {
+//     const artId = req.params.id;
+//     const userId = req.session.currentUser._id;
+
+//     let existe = false;
+//     const user = await User.findById(userId);
+//     const arrayOfFavourites = user.favorites;
+//     arrayOfFavourites.forEach((elem) => {
+//       if (elem._id === artId) existe = true;
+//     });
+//     if (!existe) {
+//       await User.findByIdAndUpdate(userId, { $push: { favorites: artId } });
+//     }
+//     res.redirect('/users/profile');
+//   } catch (error) {
+//     console.log(error);
+//     next(error);
+//   }
+// });
+
+router.post('/:id/favorite-art/delete', async (req, res, next) => {
+  try {
+    const { _id } = req.params;
+    await Art.findByIdAndRemove(_id);
     res.redirect('/users/profile');
   } catch (error) {
     next(error);

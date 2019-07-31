@@ -9,7 +9,8 @@
     <img class="card-image" src="{{image}}">
     <form class="favorites-form" action="/arts/{{_id}}/favorite-art" method="POST">
       {{#if ../currentUser}}
-        <button class="favorites-btn" type="submit">Añadir a favoritos</button>
+      <button class="favorites-btn" type="submit"><img class="favorites-btn-icon" src="/images/heart-empty-icon.svg"
+          alt="Añadir a favoritos icon">Añadir a favoritos</button>
       {{/if}}
     </form>
   </article>

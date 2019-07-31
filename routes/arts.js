@@ -87,6 +87,7 @@ router.post('/:id/delete', async (req, res, next) => {
   }
 });
 
+// Add favorites
 router.post('/:id/favorite-art', async (req, res, next) => {
   try {
     const artId = req.params.id;
@@ -97,7 +98,8 @@ router.post('/:id/favorite-art', async (req, res, next) => {
     const arrayOfFavourites = user.favorites;
 
     arrayOfFavourites.forEach((elem) => {
-      if (elem === artId) existe = true;
+      console.log(elem, artId, elem === artId, elem.toString === artId);
+      if (elem.toString() === artId) existe = true;
     });
     if (!existe) {
       await User.findByIdAndUpdate(userId, { $push: { favorites: artId } }, { new: true });
@@ -109,6 +111,7 @@ router.post('/:id/favorite-art', async (req, res, next) => {
   }
 });
 
+// Delete favorites
 router.post('/:id/favorite-art/delete', async (req, res, next) => {
   try {
     const { id } = req.params;

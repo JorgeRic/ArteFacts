@@ -5,14 +5,16 @@
   <title>{{title}}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/fontface.css" />
   <link rel="stylesheet" href="/stylesheets/reset.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
   <header class="header">
     <nav class="header-navbar">
-      <h1><a class="header-brand-logo" href="/"><img src="/images/artefacts-logo.svg" alt="Artefacts brand logo"></a>
+      <h1><a class="header-brand-logo" href="/"><img class="header-brand-logo-img" src="/images/artefacts-logo.svg"
+            alt="Artefacts brand logo"></a>
       </h1>
       <ul class="navbar-list">
         {{#unless currentUser}}
@@ -25,15 +27,18 @@
         {{/unless}}
         {{#if currentUser}}
         <li class="navbar-list-item">
-          <a class="create-art-btn" href="/arts/create-art">Subir arte</a>
+          <a class="create-art-btn" href="/arts/create-art">
+            <img class="header-icon" src="/images/upload-icon.svg" alt="Create art icon"></a>
+        </li>
+        <li class="navbar-list-item">
+          <a href="/users/profile" class="navbar-list-link profile-btn"><img class="header-icon"
+              src="/images/profile-icon.svg" alt="User profile icon"></a>
         </li>
         <li class="navbar-list-item">
           <form action="/auth/logout" method="POST">
-            <button class="logout-btn" type="submit">Logout</button>
+            <button class="logout-btn" type="submit"><img class="header-icon" src="/images/logout-icon.svg"
+                alt="User profile icon"></button>
           </form>
-        </li>
-        <li class="navbar-list-item">
-          <a href="/users/profile" class="navbar-list-link profile-btn">Profile</a>
         </li>
         {{/if}}
       </ul>

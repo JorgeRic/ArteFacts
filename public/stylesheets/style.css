@@ -1,56 +1,269 @@
 /* COLORS */
 :root {
   --white: #fff;
-  --soft-blue: #dcedff;
-  --light-blue: #65d4fb;
-  --mid-blue: #007ba8;
-  --dark-blue: #003a50;
-  --dark-grey: #343f3e;
-  --light-grey: #8f91a2;
-  }
-  
-  /* LAYOUT */
-  
-  .header, 
-  .footer {
-    padding: .5rem 1.125rem;
-  }
-  
-  .header {
-    border-bottom: 1px solid var(--light-grey);
-  }
-  
-  .header-navbar,
-  .navbar-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-list-link {
-    padding: 0 .5rem;
-  }
+  --pattens-blue: #dcedff;
+  --malibu: #65d4fb;
+  --deep-cerulean: #007ba8;
+  --prussian-blue: #003a50;
+  --cape-cod: #343f3e;
+  --manatee: #8f91a2;
+  --razzmatazz: #ec0b79;
+}
+
+/* GRAL STYLES */
+* {
+  font-family:'Tiempos Headline Light';
+  overflow-x: hidden;
+}
+
+*:focus {
+  outline: .1rem solid var(--razzmatazz);
+}
+
+/* BUTTONS */
+
+/* buttons icon in header*/
+.header-icon {
+  align-self: center;
+}
+
+.create-art-btn,
+.profile-btn,
+.logout-btn,
+.favorites-btn {
+  display: flex;
+  align-self: center;
+}
+
+.logout-btn,
+.favorites-btn {
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  border: none;
+}
+
+.favorites-btn {
+  align-items: center;
+  font-size: .625rem;
+  color: var(--razzmatazz);
+  text-transform: uppercase;
+}
+
+.favorites-btn-icon {
+  display: flex;
+  align-self: center;
+  width: 1.15rem;
+  height: auto;
+  margin-right: .5rem;
+}
+
+/* favourites btn: start-empty-icon.svg
+/* favourites btn:visited: start-filled-icon.svg
+
+/* attatch-img (outlined)
+/* create-art-btn (btn-filled)
+/* edit-art-btn (icon)
+/* delete-art-btn (icon)
+/* login-btn (filled)
+/* signup-btn (filled)
+/* error-btn (outlined)
+/* charge more (outlined)
+
+*/
+.btn-filled, 
+.btn-outlined {
+  padding: .75rem 1rem;
+  width: 7.875rem;
+}
+
+.btn-filled {
+  color: var(--prussian-blue);
+  background-color: var(--malibu);
+  border: none;
+}
+
+.btn-outlined {
+  color: var(--cape-cod);
+  background-color: var(--white);
+  border: 1px solid var(--cape-cod);
+}
+
+/* LAYOUT */
+.header, 
+.footer-brand,
+.footer-credits {
+  padding: .5rem 1.125rem;
+}
+
+.header {
+  border-bottom: 1px solid var(--manatee);
+}
+
+.header-brand-logo {
+  display: flex;
+  align-self: center;
+}
+
+.header-brand-logo-img {
+  width: auto;
+  height: 2.25rem;
+}
+
+.header-navbar,
+.navbar-list,
+.footer-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-list-link {
+  padding: 0 1rem;
+  color: var(--prussian-blue);
+}
+
+.navbar-list-link:last-child {
+  padding: 0 .85rem 0 1rem;
+}
+
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.footer-brand,
+.footer-credits {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer-brand {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--prussian-blue);
+}
+
+.footer-list {
+  width: 100%;
+}
+
+.footer-list-link {
+  color: var(--prussian-blue);
+}
+
+.footer-credits {
+  background-color: var(--pattens-blue);
+  font-size: .75rem;
+}
+
+.footer-brand-logo {
+  height: 2rem;
+  width: auto;
+  padding: 4rem;
+  align-self: center;
+}
 
 
+/* HOME INHERITABLE STYLES */
+.section-intro {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 2.5rem 1.125rem;
+  width: 100%;
+}
+
+.main-heading {
+  font-size: 1.5rem;
+  font-family: 'Tiempos Headline Bold';
+  color: var(--prussian-blue);
+  text-align: center;
+  width: 100%;
+}
+
+.main-subtitle {
+  font-size: 1.125rem;
+  color: var(--manatee);
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: var(--pattens-blue);
+  margin-bottom: .5rem;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+/* PROFILE STYLES */
+.section-title {
+  font-size: 1.25rem;
+  color: var(--deep-cerulean);
+  padding: 2.625rem 0;
+}
+
+/* FORM STYLES */
+.art-form,
+.user-form {
+  display: flex;
+  flex-flow: column nowrap; 
+}
+
+.favorites-form {
+  padding: .5rem 1rem; 
+}
+
+input, select {
+  height: 3.375rem;
+  padding: 1.25rem .875rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--manatee);
+}
+
+input:last-child {
+  margin-bottom: 0;
+}
+
+
+<<<<<<< HEAD
 .visible{
   display: block;
 }
 .hidden{
   display: none;
+=======
+.input-title {
+  height: 6.875rem;
+}
+
+.input-attatch {
+  height: 9.625rem;
+>>>>>>> [Layout] Responsive
 }
   
-  .footer {
-    background-color: var(--dark-blue);
-  }
-  
-  
-  .footer-list {
-    background-color: var(--soft-blue);
-  }
-  
-  img{
-    height: 100px;
-    width: 100px;
-  }
-  /* COMPONENTS */
-  /*buttons, cards..
+.footer {
+  background-color: var(--dark-blue);
+}
+
+
+.footer-list {
+  background-color: var(--soft-blue);
+}
+
+img{
+  height: 100px;
+  width: 100px;
+}
+/* COMPONENTS */
+/*buttons, cards..

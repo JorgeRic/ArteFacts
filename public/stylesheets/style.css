@@ -60,9 +60,6 @@
   margin-right: .5rem;
 }
 
-/* favourites btn: start-empty-icon.svg
-/* favourites btn:visited: start-filled-icon.svg
-
 /* attatch-img (outlined)
 /* create-art-btn (btn-filled)
 /* edit-art-btn (icon)
@@ -168,7 +165,6 @@
   align-self: center;
 }
 
-
 /* HOME INHERITABLE STYLES */
 .section-intro {
   display: flex;
@@ -235,35 +231,27 @@ input:last-child {
   margin-bottom: 0;
 }
 
-
-<<<<<<< HEAD
-.visible{
+.visible {
   display: block;
 }
+
 .hidden{
   display: none;
-=======
+}
+
 .input-title {
   height: 6.875rem;
 }
 
 .input-attatch {
   height: 9.625rem;
->>>>>>> [Layout] Responsive
 }
   
 .footer {
   background-color: var(--dark-blue);
 }
 
-
 .footer-list {
   background-color: var(--soft-blue);
 }
 
-img{
-  height: 100px;
-  width: 100px;
-}
-/* COMPONENTS */
-/*buttons, cards..

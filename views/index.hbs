@@ -4,16 +4,13 @@
 <section class="art-list">
   {{#each arts}}
   <article>
-    <p>{{title}}</p>
-    <p>{{author}}</p>
-    <p>{{artType}}</p>
-    <form class="art-form" action="/" method="POST">
-   <img src="{{image}}">
-    <button type="submit">Añadir a favoritos</button>
-   </form>
+    <img src="{{image}}">
+    <form class="favorites-form" action="/arts/{{_id}}/favorite-art" method="POST">
+      <button class="favorites-btn" type="submit">Añadir a favoritos</button>
+    </form>
   </article>
   {{/each}}
 
 </section>
 
-
+{{!-- <script src="../javascripts/main.js"></script> --}}

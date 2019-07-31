@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56 (81588) - https://sketch.com -->
+    <title>logout-icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="logout-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3">
+            <circle id="Oval" cx="15" cy="15" r="15"></circle>
+        </g>
+        <g id="Group" transform="translate(5.000000, 4.000000)" fill="#003A50">
+            <path d="M7,2.45780228 L7,4.58151705 C4.06816966,5.7682918 2,8.64262245 2,12 C2,16.418278 5.581722,20 10,20 C14.418278,20 18,16.418278 18,12 C18,8.64262245 15.9318303,5.7682918 13,4.58151705 L13,2.45780228 C17.057107,3.73206592 20,7.52235821 20,12 C20,17.5228475 15.5228475,22 10,22 C4.4771525,22 0,17.5228475 0,12 C0,7.52235821 2.94289305,3.73206592 7,2.45780228 Z" id="Combined-Shape"></path>
+            <rect id="Rectangle" x="9" y="0" width="2" height="10" rx="1"></rect>
+        </g>
+    </g>
+</svg>

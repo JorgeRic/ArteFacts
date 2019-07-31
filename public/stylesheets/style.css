@@ -231,14 +231,22 @@ input:last-child {
   margin-bottom: 0;
 }
 
+<<<<<<< HEAD
 .visible {
+=======
+
+.visible{
+>>>>>>> merge style
   display: block;
 }
 
 .hidden{
   display: none;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> merge style
 .input-title {
   height: 6.875rem;
 }

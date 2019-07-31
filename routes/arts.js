@@ -103,21 +103,18 @@ router.post('/:id/delete', async (req, res, next) => {
 
 router.post('/:id/favorite-art', async (req, res, next) => {
   try {
-    const { artId } = req.params.id;
+    const artId = req.params.id;
     const userId = req.session.currentUser._id;
 
     let existe = false;
     const user = await User.findById(userId);
     const arrayOfFavourites = user.favorites;
+
     arrayOfFavourites.forEach((elem) => {
-      console.log(typeof elem);
-      console.log(typeof artId);
-      console.log(elem);
-      console.log(artId);
       if (elem === artId) existe = true;
     });
     if (!existe) {
-      await User.findByIdAndUpdate(userId, { $push: { favorites: artId } });
+      await User.findByIdAndUpdate(userId, { $push: { favorites: artId } }, { new: true });
     }
     res.redirect('/users/profile');
   } catch (error) {
@@ -128,8 +125,9 @@ router.post('/:id/favorite-art', async (req, res, next) => {
 
 router.post('/:id/favorite-art/delete', async (req, res, next) => {
   try {
-    const id = req.params.id;
+    const { id } = req.params;
     const userId = req.session.currentUser._id;
+
     await User.findByIdAndUpdate(userId, { $pull: { favorites: id } });
     res.redirect('/users/profile');
   } catch (error) {

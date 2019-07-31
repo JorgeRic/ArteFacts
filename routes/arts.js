@@ -87,20 +87,6 @@ router.post('/:id/delete', async (req, res, next) => {
   }
 });
 
-// Add favourite art
-// router.post('/:id/favorite-art', async (req, res, next) => {
-//   try {
-//     const artId = req.params.id;
-//     const userId = req.session.currentUser._id;
-
-//     await User.findByIdAndUpdate(userId, { $push: { favorites: artId } });
-//     res.redirect('/users/profile');
-//   } catch (error) {
-//     console.log(error);
-//     next(error);
-//   }
-// });
-
 router.post('/:id/favorite-art', async (req, res, next) => {
   try {
     const artId = req.params.id;

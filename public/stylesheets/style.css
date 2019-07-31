@@ -1,12 +1,12 @@
 /* COLORS */
 :root {
   --white: #fff;
-  --soft-blue: #dcedff;
-  --light-blue: #65d4fb;
-  --mid-blue: #007ba8;
-  --dark-blue: #003a50;
-  --dark-grey: #343f3e;
-  --light-grey: #8f91a2;
+  --pattens-blue: #dcedff;
+  --malibu: #65d4fb;
+  --deep-cerulean: #007ba8;
+  --prussian-blue: #003a50;
+  --cape-cod: #343f3e;
+  --manatee: #8f91a2;
 }
 
 /* BUTTONS */
@@ -33,15 +33,15 @@
 }
 
 .btn-filled {
-  color: var(--dark-blue);
-  background-color: var(--light-blue);
+  color: var(--prussian-blue);
+  background-color: var(--malibu);
   border: none;
 }
 
 .btn-outlined {
-  color: var(--dark-grey);
+  color: var(--cape-cod);
   background-color: var(--white);
-  border: 1px solid var(--dark-grey);
+  border: 1px solid var(--cape-cod);
 }
 
 /* LAYOUT */
@@ -52,7 +52,7 @@
 }
 
 .header {
-  border-bottom: 1px solid var(--light-grey);
+  border-bottom: 1px solid var(--manatee);
 }
 
 .header-navbar,
@@ -66,7 +66,7 @@
 .navbar-list-link,
 .footer-list-link {
   padding: 0 .5rem;
-  color: var(--dark-blue);
+  color: var(--prussian-blue);
 }
 
 .footer {
@@ -77,7 +77,7 @@
 .footer-brand {
   display: inline-flex;
   justify-content: center;
-  background-color: var(--dark-blue);
+  background-color: var(--prussian-blue);
 }
 
 .footer-brand-logo {
@@ -88,7 +88,7 @@
 }
 
 .footer-credits {
-  background-color: var(--soft-blue);
+  background-color: var(--pattens-blue);
 }
 
 /* HOME INHERITABLE STYLES */
@@ -98,12 +98,12 @@
 
 .main-heading {
   font-size: 1.5rem;
-  color: var(--dark-blue);
+  color: var(--prussian-blue);
 }
 
 .main-subtitle {
   font-size: 1.125rem;
-  color: var(--soft-grey);
+  color: var(--manatee);
   margin-top: 1rem;
 }
 
@@ -113,7 +113,7 @@
 
 .card {
   padding: 1rem;
-  border-bottom: .25rem solid var(--soft-blue);
+  border-bottom: .25rem solid var(--pattens-blue);
 }
 
 .card-image {
@@ -124,7 +124,7 @@
 /* PROFILE STYLES */
 .section-title {
   font-size: 1.25rem;
-  color: var(--mid-blue);
+  color: var(--deep-cerulean);
   padding: 42px 0;
 }
 
@@ -139,7 +139,7 @@ input, select {
   height: 55px;
   padding: 1.25rem .875rem;
   margin-bottom: 1.25rem;
-  border: 1px solid var(--light-grey);
+  border: 1px solid var(--manatee);
 }
 
 input:last-child {
@@ -147,7 +147,7 @@ input:last-child {
 }
 
 input::placeholder {
-  color: var(--light-grey);
+  color: var(--manatee);
 }
 
 .input-title {

@@ -14,25 +14,34 @@
   </ul>
 </nav>
 
-<section class="created-art-list visible">
-  <h3 class="section-title">Galeria</h3>
-  {{#each userArts.arts}}
-  <article class="card created-art">
-    <img class="card-image" src={{image}} alt={{title}}>
-    <div class="card-content">
-      <p class="card-title">{{title}}</p>
-      <p class="card-category">#{{artType}}</p>
-      <div class="form-group">
-        <a class="edit-art-btn" href="/arts/{{id}}/edit-art">Edit</a>
-        <form action="/arts/{{id}}/delete" method="POST">
-          <button class="delete-btn" type="submit">Delete</button>
-        </form>
-      </div>
-    </div>
-  </article>
-  {{/each}}
-</section>
 
+
+ <button id="a">Show A</button>
+<button id="b">Show B</button>
+
+<div id="a-div" class="hideDiv">
+  <section class="created-art-list visible">
+    <h3 class="section-title">Galeria</h3>
+    {{#each userArts.arts}}
+    <article class="card created-art">
+      <img class="card-image" src={{image}} alt={{title}}>
+      <div class="card-content">
+        <p class="card-title">{{title}}</p>
+        <p class="card-category">#{{artType}}</p>
+        <div class="form-group">
+          <a class="edit-art-btn" href="/arts/{{id}}/edit-art">Edit</a>
+          <form action="/arts/{{id}}/delete" method="POST">
+            <button class="delete-btn" type="submit">Delete</button>
+          </form>
+        </div>
+      </div>
+    </article>
+    {{/each}}
+  </section>
+</div>
+
+
+ <div id="b-div" class="hideDiv">
 <section class="favorite-list hidden">
   {{#each userFavorites.favorites}}
   <article class="card favourite-card">
@@ -52,3 +61,14 @@
   </article>
   {{/each}}
 </section>
+ </div>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../javascripts/main.js"></script>
+{{!-- <p>Pregunta... (<a href="#" id="alternar-respuesta-ej1">ver respuesta</a>)
+ 
+<div id="respuesta-ej1" style="display:none">Respuesta... </div> --}}

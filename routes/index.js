@@ -8,7 +8,7 @@ router.get('/', async (req, res, next) => {
   const arts = await Art.find();
   const content = {
     title: 'Do art, do fact',
-    subtitle: 'Bienvenidas a artefacts, una galeria colectiva para compartir & amar el arte',
+    subtitle: 'Artefacts, la galeria colectiva para compartir & amar el arte',
     arts
   };
   // console.log(req.session.currentUser);

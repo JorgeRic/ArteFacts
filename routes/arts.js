@@ -87,6 +87,7 @@ router.post('/:id/delete', async (req, res, next) => {
   }
 });
 
+// Add favorites
 router.post('/:id/favorite-art', async (req, res, next) => {
   try {
     const artId = req.params.id;
@@ -109,6 +110,7 @@ router.post('/:id/favorite-art', async (req, res, next) => {
   }
 });
 
+// Delete favorites
 router.post('/:id/favorite-art/delete', async (req, res, next) => {
   try {
     const { id } = req.params;

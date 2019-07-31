@@ -11,6 +11,7 @@ router.get('/', async (req, res, next) => {
     subtitle: 'Bienvenidas a artefacts, una galeria colectiva para compartir & amar el arte',
     arts
   };
+  // console.log(req.session.currentUser);
   res.render('index', content);
 });
 

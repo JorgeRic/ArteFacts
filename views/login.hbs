@@ -3,10 +3,9 @@
 </section>
 
 <div class="form-container">
-  <p class="form-description">Login</p>
-  <form action="/auth/login" method="POST">
+  <form class="user-form" action="/auth/login" method="POST">
     <div class="form-grup">
-      <label for="username" class="form-label">Username</label>
+      <label for="username" class="hidden-label">Username</label>
       {{#if formData.length}}
       <input type="text" id="username" name="username" placeholder="Username" class="form-input"
         value="{{formData.[0]}}">
@@ -20,7 +19,7 @@
       {{/if}}
     </div>
     <div class="form-grup">
-      <label for="password" class="form-label">Password</label>
+      <label class="hidden-label" for="password" class="form-label">Password</label>
       <input type="text" id="password" name="password" placeholder="Password" class="form-input">
       {{#if messages.length}}
       <ul class="validation">

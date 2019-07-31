@@ -1,18 +1,53 @@
 /* COLORS */
 :root {
---white: #fff;
---soft-blue: #dcedff;
---light-blue: #65d4fb;
---mid-blue: #007ba8;
---dark-blue: #003a50;
---dark-grey: #343f3e;
---light-grey: #8f91a2;
+  --white: #fff;
+  --soft-blue: #dcedff;
+  --light-blue: #65d4fb;
+  --mid-blue: #007ba8;
+  --dark-blue: #003a50;
+  --dark-grey: #343f3e;
+  --light-grey: #8f91a2;
+}
+
+/* BUTTONS */
+/* favourites btn: start-empty-icon.svg
+/* favpurites btn:visited: start-filled-icon.svg
+
+/* upload-art-btn (icon)
+/* attatch-img (outlined)
+/* create-art-btn (btn-filled)
+/* edit-art-btn (icon)
+/* delete-art-btn (icon)
+/* profile-btn (icon)
+/* login-btn (filled)
+/* signup-btn (filled)
+/* logout-btn (icon)
+/* error-btn (outlined)
+/* charge more (outlined)
+
+*/
+.btn-filled, 
+.btn-outlined {
+  padding: .75rem 1rem;
+  width: 126px;
+}
+
+.btn-filled {
+  color: var(--dark-blue);
+  background-color: var(--light-blue);
+  border: none;
+}
+
+.btn-outlined {
+  color: var(--dark-grey);
+  background-color: var(--white);
+  border: 1px solid var(--dark-grey);
 }
 
 /* LAYOUT */
-
 .header, 
-.footer {
+.footer-brand,
+.footer-credits {
   padding: .5rem 1.125rem;
 }
 
@@ -21,23 +56,113 @@
 }
 
 .header-navbar,
-.navbar-list {
+.navbar-list,
+.footer-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar-list-link {
+.navbar-list-link,
+.footer-list-link {
   padding: 0 .5rem;
+  color: var(--dark-blue);
 }
 
 .footer {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.footer-brand {
+  display: inline-flex;
+  justify-content: center;
   background-color: var(--dark-blue);
 }
 
-.footer-list {
+.footer-brand-logo {
+  height: 2rem;
+  width: auto;
+  padding: 4rem;
+  align-self: center;
+}
+
+.footer-credits {
   background-color: var(--soft-blue);
 }
 
-/* COMPONENTS */
-/*buttons, cards..
+/* HOME INHERITABLE STYLES */
+.section-intro {
+  padding: 2.5rem 0;
+}
+
+.main-heading {
+  font-size: 1.5rem;
+  color: var(--dark-blue);
+}
+
+.main-subtitle {
+  font-size: 1.125rem;
+  color: var(--soft-grey);
+  margin-top: 1rem;
+}
+
+/* .art-list {
+  display: flex;
+} */
+
+.card {
+  padding: 1rem;
+  border-bottom: .25rem solid var(--soft-blue);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+/* PROFILE STYLES */
+.section-title {
+  font-size: 1.25rem;
+  color: var(--mid-blue);
+  padding: 42px 0;
+}
+
+/* FORM STYLES */
+.art-form,
+.user-form {
+  display: flex;
+  flex-flow: column nowrap; 
+}
+
+input, select {
+  height: 55px;
+  padding: 1.25rem .875rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--light-grey);
+}
+
+input:last-child {
+  margin-bottom: 0;
+}
+
+input::placeholder {
+  color: var(--light-grey);
+}
+
+.input-title {
+  height: 110px;
+}
+
+.input-attatch {
+  height: 154px;
+}
+
+/* SIGNUP/ LOGIN */
+.form-container {
+  
+}
+
+.hidden-label {
+  visibility: hidden;
+}

@@ -159,7 +159,7 @@
 }
 
 .footer-brand-logo {
-  height: 2rem;
+  height: auto;
   width: auto;
   padding: 4rem;
   align-self: center;

@@ -30,9 +30,14 @@
   .navbar-list-link {
     padding: 0 .5rem;
   }
-  .hideDiv { 
-    display:none; 
-  }
+
+
+.visible{
+  display: block;
+}
+.hidden{
+  display: none;
+}
   
   .footer {
     background-color: var(--dark-blue);

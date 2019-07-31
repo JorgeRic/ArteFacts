@@ -11,24 +11,50 @@ const main = () => {
 //   });
 // };
 
-  var $aDiv = $('#a-div');
-  var $bDiv = $('#b-div');
-  var $aBtn = $('#a');
-  var $bBtn = $('#b');
+  // var $aDiv = $('#a-div');
+  // var $bDiv = $('#b-div');
+  // var $aBtn = $('#a');
+  // var $bBtn = $('#b');
 
-  $aDiv.show();
-  $bDiv.hide();
+  // $aDiv.show();
+  // $bDiv.hide();
 
-  $aBtn.click(function () {
-    $aDiv.toggle(500, function () {
-      if ($aDiv.is(':disabled')) { $bBtn.prop('visible', true); } else { $bBtn.prop('visible', false); }
+  // $aBtn.click(function () {
+  //   $aDiv.toggle(500, function () {
+  //     if ($aDiv.is('disabled')) { $bBtn.prop('disabled', true); } else { $bBtn.prop('disabled', false); }
+  //   });
+  // });
+
+  // $bBtn.click(function () {
+  //   $bDiv.toggle(500, function () {
+  //     if ($bDiv === $bDiv.show()) {
+  //       $aDiv.hide();
+  //     }
+  //     if ($bDiv.is('disabled')) { $aBtn.prop('disabled', true); } else { $aBtn.prop('disabled', false); }
+  //   });
+  // });
+
+  const buttonA = document.querySelector('#a');
+  const buttonB = document.querySelector('#b');
+  const myFavorites = document.querySelector('.favorite-list');
+  const myArt = document.querySelector('.created-art-list');
+
+  const buttonToogle = (mybtn, section, section2) => {
+    mybtn.addEventListener('click', (e) => {
+      if (section.classList.contains('visible') && section2.classList.contains('hidden')) {
+        section.classList.remove('visible');
+        section.classList.add('hidden');
+        section2.classList.remove('hidden');
+        section2.classList.add('visible');
+      } else {
+        section.classList.remove('hidden');
+        section.classList.add('visible');
+        section2.classList.remove('visible');
+        section2.classList.add('hidden');
+      }
     });
-  });
-
-  $bBtn.click(function () {
-    $bDiv.toggle(500, function () {
-      if ($bDiv.is(':visible')) { $aBtn.prop('disabled', true); } else { $aBtn.prop('disabled', false); }
-    });
-  });
+  };
+  buttonToogle(buttonB, myFavorites, myArt);
+  buttonToogle(buttonA, myArt, myFavorites);
 };
 window.addEventListener('load', main);

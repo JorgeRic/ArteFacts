@@ -8,11 +8,12 @@
   <article class="card">
     <img class="card-image" src="{{image}}">
     <form class="favorites-form" action="/arts/{{_id}}/favorite-art" method="POST">
-      <button class="favorites-btn" type="submit">Añadir a favoritos</button>
+      {{#if ../currentUser}}
+        <button class="favorites-btn" type="submit">Añadir a favoritos</button>
+      {{/if}}
     </form>
   </article>
   {{/each}}
-
 </section>
 
 {{!-- <script src="../javascripts/main.js"></script> --}}

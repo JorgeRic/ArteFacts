@@ -16,12 +16,12 @@ const main = () => {
   var $aBtn = $('#a');
   var $bBtn = $('#b');
 
-  $aDiv.hide();
+  $aDiv.show();
   $bDiv.hide();
 
   $aBtn.click(function () {
     $aDiv.toggle(500, function () {
-      if ($aDiv.is(':visible')) { $bBtn.prop('disabled', true); } else { $bBtn.prop('disabled', false); }
+      if ($aDiv.is(':disabled')) { $bBtn.prop('visible', true); } else { $bBtn.prop('visible', false); }
     });
   });
 

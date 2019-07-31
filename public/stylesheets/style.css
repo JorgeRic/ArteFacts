@@ -7,15 +7,17 @@
   --prussian-blue: #003a50;
   --cape-cod: #343f3e;
   --manatee: #8f91a2;
+  --razzmatazz: #ec0b79;
 }
 
 /* GRAL STYLES */
 * {
   font-family:'Tiempos Headline Light';
+  overflow-x: hidden;
 }
 
 *:focus {
-  outline: .1rem solid var(deep-cerulean);
+  outline: .1rem solid var(--razzmatazz);
 }
 
 /* BUTTONS */
@@ -27,13 +29,14 @@
 
 .create-art-btn,
 .profile-btn,
-.logout-btn {
+.logout-btn,
+.favorites-btn {
   display: flex;
   align-self: center;
 }
 
-.logout-btn {
-  align-self: center;
+.logout-btn,
+.favorites-btn {
   padding: 0;
   appearance: none;
   -webkit-appearance: none;
@@ -42,18 +45,30 @@
   border: none;
 }
 
+.favorites-btn {
+  align-items: center;
+  font-size: .625rem;
+  color: var(--razzmatazz);
+  text-transform: uppercase;
+}
+
+.favorites-btn-icon {
+  display: flex;
+  align-self: center;
+  width: 1.15rem;
+  height: auto;
+  margin-right: .5rem;
+}
+
 /* favourites btn: start-empty-icon.svg
 /* favourites btn:visited: start-filled-icon.svg
 
-/* upload-art-btn (icon)
 /* attatch-img (outlined)
 /* create-art-btn (btn-filled)
 /* edit-art-btn (icon)
 /* delete-art-btn (icon)
-/* profile-btn (icon)
 /* login-btn (filled)
 /* signup-btn (filled)
-/* logout-btn (icon)
 /* error-btn (outlined)
 /* charge more (outlined)
 
@@ -167,6 +182,8 @@
   font-size: 1.5rem;
   font-family: 'Tiempos Headline Bold';
   color: var(--prussian-blue);
+  text-align: center;
+  width: 100%;
 }
 
 .main-subtitle {
@@ -174,11 +191,14 @@
   color: var(--manatee);
   margin-top: 1rem;
   text-align: center;
+  width: 100%;
 }
 
 .card {
-  padding: 1rem;
-  border-bottom: .25rem solid var(--pattens-blue);
+  display: flex;
+  flex-flow: row wrap;
+  background-color: var(--pattens-blue);
+  margin-bottom: .5rem;
 }
 
 .card-image {
@@ -198,6 +218,10 @@
 .user-form {
   display: flex;
   flex-flow: column nowrap; 
+}
+
+.favorites-form {
+  padding: .5rem 1rem; 
 }
 
 input, select {

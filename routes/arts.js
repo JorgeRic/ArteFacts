@@ -98,7 +98,8 @@ router.post('/:id/favorite-art', async (req, res, next) => {
     const arrayOfFavourites = user.favorites;
 
     arrayOfFavourites.forEach((elem) => {
-      if (elem === artId) existe = true;
+      console.log(elem, artId, elem === artId, elem.toString === artId);
+      if (elem.toString() === artId) existe = true;
     });
     if (!existe) {
       await User.findByIdAndUpdate(userId, { $push: { favorites: artId } }, { new: true });

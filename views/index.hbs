@@ -3,16 +3,21 @@
   <p class="main-subtitle">{{subtitle}}</p>
 </section>
 
-{{!-- <form class="search" action="/arts/search" method="GET">
-  <select id="art-type" name="artType">
-    <option selected value="Pintura">Pintura</option>
-    <option value="Fotografía">Fotografía</option>
-    <option value="Escultura">Escultura</option>
-    <option value="Ilustración">Ilustración</option>
-    <option value="Collage">Collage</option>
-  </select>
-  <button type="submit" class="btn-filled" placeholder="Pintura">Buscar</button>
-</form> --}}
+<form class="search" action="/arts/search" method="GET">
+  <div class="search-bar-container">
+    <div class="select-input search">
+      <select class="search-bar" id="art-type" name="artType" required>
+        <option value="" disabled selected>Selecciona el tipo de arte</option>
+        <option value="Pintura">Pintura</option>
+        <option value="Fotografía">Fotografía</option>
+        <option value="Escultura">Escultura</option>
+        <option value="Ilustración">Ilustración</option>
+        <option value="Collage">Collage</option>
+      </select>
+    </div>
+    <button type="submit" class="btn-filled btn-search" placeholder="Pintura">Buscar</button>
+  </div>
+</form>
 
 <section class="art-list">
   {{#each arts}}

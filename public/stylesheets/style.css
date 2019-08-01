@@ -237,6 +237,21 @@
   width: 100%;
 }
 
+.search-bar-container {
+  display: flex;
+  flex-flow: row-wrap;
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+}
+select.search-bar {
+  margin-bottom: 0;
+}
+
+.select-input.search {
+  border: 1px solid var(--manatee);
+  margin-bottom: 0;
+}
+
 .art-list,
 .created-art-list {
   display: flex;

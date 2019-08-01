@@ -71,6 +71,16 @@
   text-transform: uppercase;
   padding: .75rem 0;
   overflow-x: visible;
+  outline: 0;
+  outline-color: var(--white);
+  background-color: var(--white);
+  border-top-color: var(--white);
+  border-right-color: var(--white);
+  border-left-color: var(--white);
+  border-bottom: 2px solid var(--white);
+  border-right: 0;
+  border-left: 0;
+  border-top: 0;
 }
 
 .uploaded-art-btn:focus,
@@ -93,7 +103,6 @@
   height: 1.125rem;
   width: auto;
 }
-
 
 .edit-art-icon,
 .delete-art-icon {

@@ -110,6 +110,7 @@
   width: auto;
 }
 
+.delete-btn,
 .delete-favourite {
   padding: 0;
 }

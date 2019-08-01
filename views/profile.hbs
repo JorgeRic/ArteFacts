@@ -22,15 +22,19 @@
     <article class="card created-art">
       <img class="card-image" src={{image}} alt={{title}}>
       <div class="card-content">
-        <p class="card-title">{{author}} · {{title}}</p>
-        <p class="card-category">#{{artType}}</p>
-        <div class="form-group">
-          <a class="edit-art-btn" href="/arts/{{id}}/edit-art"><img class="edit-art-icon" src="/images/edit-icon.svg"
-              alt="Edit arts info icon"></a>
-          <form action="/arts/{{id}}/delete" method="POST">
-            <button class="delete-btn" type="submit"><img class="delete-art-icon" src="/images/trash-icon.svg"
-                alt="Delete arts icon"></button>
-          </form>
+        <div class="card-owner">
+          <p class="card-title">{{author}} · {{title}}</p>
+        </div>
+        <div class="card-content-secondary">
+          <p class="card-category">#{{artType}}</p>
+          <div class="form-group">
+            <a class="edit-art-btn" href="/arts/{{id}}/edit-art"><img class="edit-art-icon" src="/images/edit-icon.svg"
+                alt="Edit arts info icon"></a>
+            <form action="/arts/{{id}}/delete" method="POST">
+              <button class="delete-btn" type="submit"><img class="delete-art-icon" src="/images/trash-icon.svg"
+                  alt="Delete arts icon"></button>
+            </form>
+          </div>
         </div>
       </div>
     </article>

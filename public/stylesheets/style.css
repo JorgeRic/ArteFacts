@@ -7,6 +7,7 @@
   --prussian-blue: #003a50;
   --cape-cod: #343f3e;
   --manatee: #8f91a2;
+  --silver: #ccc;
   --razzmatazz: #ec0b79;
 }
 
@@ -70,6 +71,16 @@
   text-transform: uppercase;
   padding: .75rem 0;
   overflow-x: visible;
+  outline: 0;
+  outline-color: var(--white);
+  background-color: var(--white);
+  border-top-color: var(--white);
+  border-right-color: var(--white);
+  border-left-color: var(--white);
+  border-bottom: 2px solid var(--white);
+  border-right: 0;
+  border-left: 0;
+  border-top: 0;
 }
 
 .uploaded-art-btn:focus,
@@ -93,19 +104,17 @@
   width: auto;
 }
 
-
 .edit-art-icon,
 .delete-art-icon {
   height: 2rem;
   width: auto;
 }
 
+.delete-favourite {
+  padding: 0;
+}
+
 /* buttons in cards */
-
-/* attatch-img (outlined)
-/* create-art-btn (btn-filled)
-*/
-
 .btn-filled, 
 .btn-outlined {
   padding: .75rem 1rem;
@@ -276,16 +285,33 @@
 }
 
 .card-content {
+  width: 100%;
   display: flex;
   flex-flow: column wrap;
+  padding: 0 1rem;
 }
 
 .card-title {
+  width: 100%;
   font-family: 'Tiempos Headline Bold';
   color: var(--prussian-blue);
+  padding: .75rem 0 0 0;
+}
+
+.card-content-secondary {
+  width: 100%;
+}
+
+.card-content-secondary,
+.card-content-info {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: space-between;
 }
 
 .card-category {
+  margin-right: 1rem;
   color: var(--deep-cerulean);
 }
 
@@ -297,31 +323,38 @@
 }
 
 /* FORM STYLES */
+
+/* login-signup */
+
+
 .form-container-art,
+.form-container-edit-art,
 .form-container-users {
   width: 100%;
   height: 100vh;
+  padding: 1.5rem 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 70% 50%;
 }
 
-.form-container-art {
-  background-image: url("../images/art-form-background-img.jpg");
+.form-container-art,
+.form-container-users {
+  background-image: url("../images/form-background-img.jpg");
 }
 
-.form-container-users {
-  background-image: url("../images/users-form-background-img.jpg");
+.form-container-edit-art {
+  background-color: var(--deep-cerulean);
 }
 
 .art-form,
 .user-form {
   display: flex;
   flex-flow: column nowrap;
-  align-content: center;
+  align-items: center;
   background-color: rgba(255, 255, 255, .77);
-  padding: 3.5rem 2rem 3.625rem;
-  margin: 3.5rem 2rem 3.625rem;
+  padding: 1.5rem;
+  margin: 0 1.5rem;
   animation: load 1s;
 }
 
@@ -335,6 +368,10 @@
   }
 }
 
+.user-form {
+  margin: 1.5rem;
+}
+
 .favorites-form {
   padding: .5rem 1rem; 
 }
@@ -345,24 +382,87 @@
   width: 0;
 }
 
-input,
-select {
-  height: 3.125rem;
-  padding: 1.25rem .875rem;
-  margin-bottom: 1.25rem;
-  border: 1px solid var(--manatee);
+.form-label {
+  font-size: .875rem;
+  color: var(--manatee);
+  width: 100%;
 }
 
-input:last-child {
-  margin-bottom: 0;
+input,
+select {
+  width: 100%;
+  height: 3rem;
+  line-height: 1;
+  color: var(--silver);
+  background-color: var(--white);
+  border: 0;
+  padding: 1.25rem .875rem;
+  margin-bottom: 1.25rem;
+}
+
+input::placeholder {
+  color: var(--silver);
+}
+
+select {
+  padding: 1rem .875rem;
+  color: var(--manatee);
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select-input {
+  width: 100%;
+  position: relative;
+  float: left;
+}
+
+.select-input:after {
+  content: '\f078';
+  color: var(--manatee);
+  font: normal normal normal .875rem/1 FontAwesome;
+  right: .75rem;
+  top: 1rem;
+  padding: 0 0 2px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.select-input select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  float: right;
 }
 
 .input-art-title {
-  height: 6.875rem;
+  height: 4.5rem;
 }
 
+.label-attatch {
+  position: relative;
+}
+
+.btn-upload {
+  position: absolute;
+  top: 29%;
+  right: 22%;
+}
+
+input[file],
 .input-attatch {
+  font: 400 .875rem 'Tiempos Headline Light';
+  color: var(--white);
   height: 9.625rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-indent: 200%;
+  overflow: hidden;
 }
 
 /* ERROR VIEWS */

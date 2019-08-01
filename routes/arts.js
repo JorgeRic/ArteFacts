@@ -80,7 +80,14 @@ router.get('/search', async (req, res, next) => {
   try {
     const artType = req.query.artType;
     const arts = await Art.find({ artType });
-    res.render('index', { arts });
+
+    const content = {
+      title: 'Do art, do fact',
+      subtitle: 'Artefacts, la galeria colectiva para compartir & amar el arte',
+      arts
+    };
+
+    res.render('index', content);
   } catch (error) {
     next(error);
   }

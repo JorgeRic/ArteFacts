@@ -4,21 +4,28 @@
 
 <div class="form-container-art">
   <form class="art-form" action="/arts/create-art" method="POST" enctype="multipart/form-data">
-    <label for="author"><input type="text" name="author" placeholder="Tu nombre" required></label>
-    <label for="title"><input class="input-art-title" type="text" name="title"
+    <label class="form-label" for="author"><input type="text" name="author" placeholder="Tu nombre" required></label>
+    <label class="form-label" for="title"><input class="input-art-title" type="text" name="title"
         placeholder="Título o descripción de la obra" required></label>
-    <label for="contact"><input type="text" name="contact" placeholder="Contacto" required></label>
-    <label class="form-label" for="art-type">Selecciona el tipo de arte</label>
-    <select id="art-type" name="artType" required>
-      <option value="Pintura">Pintura</option>
-      <option value="Fotografía">Fotografía</option>
-      <option value="Escultura">Escultura</option>
-      <option value="Ilustración">Ilustración</option>
-      <option value="Collage">Collage</option>
-    </select>
+    <label class="form-label" for="contact">
+      <inpu type="text" name="contact" placeholder="Contacto" required>
+    </label>
+    <div class="select-input">
 
-    <label for="image"><input class="input-attatch" type="file" name="image"
-        placeholder="Sube la imagen de la obra"><span class="btn-outlined">Subir imagen</span></label>
+      <select claid="art-type" name="artType" required>
+        <option value="" disabled selected>Selecciona el tipo de arte</option>
+        <option value="Pintura">Pintura</option>
+        <option value="Fotografía">Fotografía</option>
+        <option value="Escultura">Escultura</option>
+        <option value="Ilustración">Ilustración</option>
+        <option value="Collage">Collage</option>
+      </select>
+    </div>
+
+    <label for="image" class="label-attatch"><input class="input-attatch" type="file" name="image"
+        placeholder="Sube la imagen de la obra">
+      <input class="btn-outlined btn-upload" type="file"></input>
+    </label>
     <button type="submit" class="btn-filled">Subir arte</button>
   </form>
 </div>

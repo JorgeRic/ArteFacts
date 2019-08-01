@@ -7,19 +7,21 @@
     <label for="author"><input type="text" name="author" value={{author}}></label>
     <label for="title"><input type="text" class="input-art-title" name="title" value={{title}}></label>
     <label for="contact"><input type="text" name="contact" value={{contact}}></label>
-    <label for="art-type">Tipo de arte</label>
-    <select id="art-type" name="artType">
-      <option value={{artType}} selected>{{artType}}</option>
-      <option value="Pintura">Pintura</option>
-      <option value="Fotografía">Fotografía</option>
-      <option value="Escultura">Escultura</option>
-      <option value="Ilustración">Ilustración</option>
-      <option value="Collage">Collage</option>
-    </select>
+    <div class="select-input">
+      <select id="art-type" name="artType">
+        <option value={{artType}} selected>{{artType}}</option>
+        <option value="Pintura">Pintura</option>
+        <option value="Fotografía">Fotografía</option>
+        <option value="Escultura">Escultura</option>
+        <option value="Ilustración">Ilustración</option>
+        <option value="Collage">Collage</option>
+      </select>
+    </div>
 
-    <label for="image"><input type="file" class="input-attatch" name="image"
-        placeholder="Sube la imagen de la obra"><span class="btn-outlined">Subir
-        imagen</span></label>
+    <label for="image" class="label-attatch"><input class="input-attatch" type="file" name="image"
+        placeholder="Sube la imagen de la obra">
+      <input class="btn-outlined btn-upload" type="file"></input>
+    </label>
     <button type="submit" class="btn-filled">Actualizar datos</button>
     <img src="{{image}}">
   </form>

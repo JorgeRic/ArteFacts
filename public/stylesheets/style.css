@@ -7,6 +7,7 @@
   --prussian-blue: #003a50;
   --cape-cod: #343f3e;
   --manatee: #8f91a2;
+  --silver: #ccc;
   --razzmatazz: #ec0b79;
 }
 
@@ -101,11 +102,6 @@
 }
 
 /* buttons in cards */
-
-/* attatch-img (outlined)
-/* create-art-btn (btn-filled)
-*/
-
 .btn-filled, 
 .btn-outlined {
   padding: .75rem 1rem;
@@ -301,7 +297,7 @@
 .form-container-users {
   width: 100%;
   height: 100vh;
-  padding: 3.5rem 0;
+  padding: 1.5rem 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 70% 50%;
@@ -312,6 +308,7 @@
 }
 
 .form-container-users {
+  background-size: 100%; 
   background-image: url("../images/users-form-background-img.jpg");
 }
 
@@ -319,10 +316,10 @@
 .user-form {
   display: flex;
   flex-flow: column nowrap;
-  align-content: center;
+  align-items: center;
   background-color: rgba(255, 255, 255, .77);
-  padding: 3.5rem 2rem 3.625rem;
-  margin: 0 2rem;
+  padding: 1.5rem;
+  margin: 0 1.5rem;
   animation: load 1s;
 }
 
@@ -346,24 +343,87 @@
   width: 0;
 }
 
-input,
-select {
-  height: 3.125rem;
-  padding: 1.25rem .875rem;
-  margin-bottom: 1.25rem;
-  border: 1px solid var(--manatee);
+.form-label {
+  font-size: .875rem;
+  color: var(--manatee);
+  width: 100%;
 }
 
-input:last-child {
-  margin-bottom: 0;
+input,
+select {
+  width: 100%;
+  height: 3rem;
+  line-height: 1;
+  color: var(--silver);
+  background-color: var(--white);
+  border: 0;
+  padding: 1.25rem .875rem;
+  margin-bottom: 1.25rem;
+}
+
+input::placeholder {
+  color: var(--silver);
+}
+
+select {
+  padding: 1rem .875rem;
+  color: var(--manatee);
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select-input {
+  width: 100%;
+  position: relative;
+  float: left;
+}
+
+.select-input:after {
+  content: '\f078';
+  color: var(--manatee);
+  font: normal normal normal .875rem/1 FontAwesome;
+  right: .75rem;
+  top: 1rem;
+  padding: 0 0 2px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.select-input select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  float: right;
 }
 
 .input-art-title {
-  height: 6.875rem;
+  height: 4.5rem;
 }
 
+.label-attatch {
+  position: relative;
+}
+
+.btn-upload {
+  position: absolute;
+  top: 29%;
+  right: 22%;
+}
+
+input[file],
 .input-attatch {
+  font: 400 .875rem 'Tiempos Headline Light';
+  color: var(--white);
   height: 9.625rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-indent: 200%;
+  overflow: hidden;
 }
 
 /* ERROR VIEWS */

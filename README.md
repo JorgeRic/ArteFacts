@@ -124,12 +124,12 @@ Workflow of tasks and backlog:
 ### Git
 URls for the project repo and deploy:
 [Link Repo](https://github.com/JorgeRic/ArteFacts) |
-[Link Deploy]()
+[Link Deploy](https://arte-facts.herokuapp.com/)
 
 
 ### Slides
 URls for the project presentation (slides):
-[Link Slides.com]()
+[Link Slides.com](https://docs.google.com/presentation/d/18x106c1-I2rpo4fTlNCJjWsnj1AJRzgLKhLmbJG639c/edit?usp=sharing)
 
 
 ### Zeplin

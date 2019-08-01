@@ -2,26 +2,22 @@
   <h2 class="main-heading">Galeria</h2>
 </section>
 
-{{!-- <a class="create-art-btn" href="/arts/create-art"><button>Subir arte</button></a> --}}
 <nav class="arts-navbar">
   <ul class="arts-navbar-list">
     <li class="arts-navbar-item">
-      <span class="navbar-item-text">artes subidas</span>
+      <button class="uploaded-art-btn nav-button highlight" id="a"><img class="uploaded-art-icon"
+          src="/images/image-icon.svg" alt="Upload arts icon">artes subidas</button>
     </li>
     <li class="arts-navbar-item">
-      <span class="navbar-item-text">artes favoritas</span>
+      <button class="favourited-art-btn nav-button" id="b"><img class="favourited-art-icon" src="/images/heart-icon.svg"
+          alt="Upload arts icon">artes favoritas</button>
     </li>
   </ul>
 </nav>
 
-
-
- <button id="a">Show A</button>
-<button id="b">Show B</button>
-
 <div id="a-div" class="hideDiv">
   <section class="created-art-list visible">
-    <h3 class="section-title">Galeria</h3>
+    <h3 class="section-title">Artes subidas</h3>
     {{#each userArts.arts}}
     <article class="card created-art">
       <img class="card-image" src={{image}} alt={{title}}>
@@ -29,9 +25,11 @@
         <p class="card-title">{{title}}</p>
         <p class="card-category">#{{artType}}</p>
         <div class="form-group">
-          <a class="edit-art-btn" href="/arts/{{id}}/edit-art">Edit</a>
+          <a class="edit-art-btn" href="/arts/{{id}}/edit-art"><img class="edit-art-icon" src="/images/edit-icon.svg"
+              alt="Edit arts info icon"></a>
           <form action="/arts/{{id}}/delete" method="POST">
-            <button class="delete-btn" type="submit">Delete</button>
+            <button class="delete-btn" type="submit"><img class="delete-art-icon" src="/images/trash-icon.svg"
+                alt="Delete arts icon"></button>
           </form>
         </div>
       </div>
@@ -40,30 +38,28 @@
   </section>
 </div>
 
-
- <div id="b-div" class="hideDiv">
-<section class="favorite-list hidden">
-  <h3 class="section-title">Coleccion</h3>
-  {{#each userFavorites.favorites}}
-  <article class="card favourite-card">
-    <img class="card-image" src={{image}} alt={{title}}>
-    <div class=" card-content">
-      <div class="card-owner">
-        <p class="card-title">{{author}} · {{title}}</p>
+<div id="b-div" class="hideDiv">
+  <section class="favorite-list hidden">
+    <h3 class="section-title">Artes favoritas</h3>
+    {{#each userFavorites.favorites}}
+    <article class="card favourite-card">
+      <img class="card-image" src={{image}} alt={{title}}>
+      <div class=" card-content">
+        <div class="card-owner">
+          <p class="card-title">{{author}} · {{title}}</p>
+        </div>
+        <p class="card-category">{{artType}}</p>
+        <p class="card-contact">{{contact}}</p>
+        <div class="form-group">
+          <form action="/arts/{{_id}}/favorite-art/delete" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
       </div>
-      <p class="card-category">{{artType}}</p>
-      <p class="card-contact">{{contact}}</p>
-      <div class="form-group">
-        <form action="/arts/{{_id}}/favorite-art/delete" method="POST">
-          <button type="submit">Delete</button>
-        </form>
-      </div>
-    </div>
-  </article>
-  {{/each}}
-</section>
- </div>
+    </article>
+    {{/each}}
+  </section>
+</div>
 </div>
 
 <script src="../javascripts/main.js"></script>
-

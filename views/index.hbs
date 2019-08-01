@@ -3,11 +3,23 @@
   <p class="main-subtitle">{{subtitle}}</p>
 </section>
 
+<!--form-- class="search" action="/arts/search" method="GET">
+ <select id="art-type" name="artType">
+    <option selected value="Pintura">Pintura</option>
+    <option value="Fotografía">Fotografía</option>
+    <option value="Escultura">Escultura</option>
+    <option value="Ilustración">Ilustración</option>
+    <option value="Collage">Collage</option>
+  </select>
+<button type="submit" class="btn-filled" placeholder="Pintura">Buscar</button>
+</!--form-->
+
 <section class="art-list">
   {{#each arts}}
   <article class="card">
     <img class="card-image" src="{{image}}">
     <form class="favorites-form" action="/arts/{{_id}}/favorite-art" method="POST">
+
       {{#if ../currentUser}}
       <button class="favorites-btn" type="submit"><img class="favorites-btn-icon" src="/images/heart-empty-icon.svg"
           alt="Añadir a favoritos icon">Añadir a favoritos</button>
@@ -16,5 +28,3 @@
   </article>
   {{/each}}
 </section>
-
-{{!-- <script src="../javascripts/main.js"></script> --}}

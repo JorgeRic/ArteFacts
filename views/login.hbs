@@ -2,7 +2,7 @@
   <h2 class="main-heading">Entra en tu cuenta</h2>
 </section>
 
-<div class="form-container">
+<div class="form-container-users">
   <form class="user-form" action="/auth/login" method="POST">
     <div class="form-grup">
       <label for="username" class="hidden-label">Username</label>
@@ -19,7 +19,7 @@
       {{/if}}
     </div>
     <div class="form-grup">
-      <label class="hidden-label" for="password" class="form-label">Password</label>
+      <label class="hidden-label" for="password">Password</label>
       <input type="text" id="password" name="password" placeholder="Password" class="form-input">
       {{#if messages.length}}
       <ul class="validation">
@@ -27,6 +27,6 @@
       </ul>
       {{/if}}
     </div>
-    <button type="submit" class="btn">Login</button>
+    <button type="submit" class="btn-filled">Login</button>
   </form>
 </div>

@@ -13,7 +13,6 @@
 /* GRAL STYLES */
 * {
   font-family:'Tiempos Headline Light';
-  overflow-x: hidden;
 }
 
 *:focus {
@@ -22,7 +21,7 @@
 
 /* BUTTONS */
 
-/* buttons icon in header*/
+/* buttons in header*/
 .header-icon {
   align-self: center;
 }
@@ -60,16 +59,53 @@
   margin-right: .5rem;
 }
 
+/* buttons in profile */
+.uploaded-art-btn,
+.favourited-art-btn {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  font-size: .625rem;
+  color: var(--manatee);
+  text-transform: uppercase;
+  padding: .75rem 0;
+  overflow-x: visible;
+}
+
+.uploaded-art-btn:focus,
+.favourited-art-btn:focus {
+  outline: 0;
+  outline-color: var(--white);
+  background-color: var(--white);
+  border-top-color: var(--white);
+  border-right-color: var(--white);
+  border-left-color: var(--white);
+  border-bottom: 2px solid var(--deep-cerulean);
+  border-right: 0;
+  border-left: 0;
+  border-top: 0;
+}
+
+.uploaded-art-icon,
+.favourited-art-icon {
+  margin-bottom: .875rem;
+  height: 1.125rem;
+  width: auto;
+}
+
+
+.edit-art-icon,
+.delete-art-icon {
+  height: 2rem;
+  width: auto;
+}
+
+/* buttons in cards */
+
 /* attatch-img (outlined)
 /* create-art-btn (btn-filled)
-/* edit-art-btn (icon)
-/* delete-art-btn (icon)
-/* login-btn (filled)
-/* signup-btn (filled)
-/* error-btn (outlined)
-/* charge more (outlined)
-
 */
+
 .btn-filled, 
 .btn-outlined {
   padding: .75rem 1rem;
@@ -129,6 +165,7 @@
 .footer {
   display: flex;
   flex-flow: row wrap;
+  background-color: var(--dark-blue);
 }
 
 .footer-brand,
@@ -146,6 +183,7 @@
 }
 
 .footer-list {
+  background-color: var(--soft-blue);
   width: 100%;
 }
 
@@ -159,7 +197,7 @@
 }
 
 .footer-brand-logo {
-  height: 2rem;
+  height: auto;
   width: auto;
   padding: 4rem;
   align-self: center;
@@ -190,6 +228,41 @@
   width: 100%;
 }
 
+/* PROFILE STYLES */
+.section-title {
+  display: flex;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--deep-cerulean);
+  padding: 2.625rem 0;
+  width: 100%;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.arts-navbar,
+.arts-navbar-list {
+  width: 100%;
+}
+
+.arts-navbar-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  border-bottom: 1px solid var(--manatee);
+}
+
+.arts-navbar-item {
+  padding: 0 1rem;
+}
+
+/* CARDS STYLES */
 .card {
   display: flex;
   flex-flow: row wrap;
@@ -202,26 +275,79 @@
   height: auto;
 }
 
-/* PROFILE STYLES */
-.section-title {
-  font-size: 1.25rem;
+.card-content {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.card-title {
+  font-family: 'Tiempos Headline Bold';
+  color: var(--prussian-blue);
+}
+
+.card-category {
   color: var(--deep-cerulean);
-  padding: 2.625rem 0;
+}
+
+/* user actions in cards */
+.form-group {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
 
 /* FORM STYLES */
+.form-container-art,
+.form-container-users {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 70% 50%;
+}
+
+.form-container-art {
+  background-image: url("../images/art-form-background-img.jpg");
+}
+
+.form-container-users {
+  background-image: url("../images/users-form-background-img.jpg");
+}
+
 .art-form,
 .user-form {
   display: flex;
-  flex-flow: column nowrap; 
+  flex-flow: column nowrap;
+  align-content: center;
+  background-color: rgba(255, 255, 255, .77);
+  padding: 3.5rem 2rem 3.625rem;
+  margin: 3.5rem 2rem 3.625rem;
+  animation: load 1s;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }
 
 .favorites-form {
   padding: .5rem 1rem; 
 }
 
-input, select {
-  height: 3.375rem;
+.hidden-label {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+input,
+select {
+  height: 3.125rem;
   padding: 1.25rem .875rem;
   margin-bottom: 1.25rem;
   border: 1px solid var(--manatee);
@@ -231,27 +357,24 @@ input:last-child {
   margin-bottom: 0;
 }
 
-.visible {
-  display: block;
-}
-
-.hidden{
-  display: none;
-}
-
-.input-title {
+.input-art-title {
   height: 6.875rem;
 }
 
 .input-attatch {
   height: 9.625rem;
 }
-  
-.footer {
-  background-color: var(--dark-blue);
-}
 
-.footer-list {
-  background-color: var(--soft-blue);
-}
+/* ERROR VIEWS */
 
+.error-view {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-image: url("../images/error-page-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 70% 50%;
+}

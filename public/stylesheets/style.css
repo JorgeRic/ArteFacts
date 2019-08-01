@@ -110,6 +110,10 @@
   width: auto;
 }
 
+.delete-favourite {
+  padding: 0;
+}
+
 /* buttons in cards */
 .btn-filled, 
 .btn-outlined {
@@ -281,16 +285,33 @@
 }
 
 .card-content {
+  width: 100%;
   display: flex;
   flex-flow: column wrap;
+  padding: 0 1rem;
 }
 
 .card-title {
+  width: 100%;
   font-family: 'Tiempos Headline Bold';
   color: var(--prussian-blue);
+  padding: .75rem 0 0 0;
+}
+
+.card-content-secondary {
+  width: 100%;
+}
+
+.card-content-secondary,
+.card-content-info {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: space-between;
 }
 
 .card-category {
+  margin-right: 1rem;
   color: var(--deep-cerulean);
 }
 

@@ -237,6 +237,12 @@
   width: 100%;
 }
 
+.art-list,
+.created-art-list {
+  display: flex;
+  flex-flow: column-reverse;
+}
+
 /* PROFILE STYLES */
 .section-title {
   display: flex;

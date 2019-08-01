@@ -323,6 +323,10 @@
 }
 
 /* FORM STYLES */
+
+/* login-signup */
+
+
 .form-container-art,
 .form-container-edit-art,
 .form-container-users {
@@ -334,17 +338,13 @@
   background-position: 70% 50%;
 }
 
-.form-container-art {
-  background-image: url("../images/art-form-background-img.jpg");
+.form-container-art,
+.form-container-users {
+  background-image: url("../images/form-background-img.jpg");
 }
 
 .form-container-edit-art {
   background-color: var(--deep-cerulean);
-}
-
-.form-container-users {
-  background-size: 100%; 
-  background-image: url("../images/users-form-background-img.jpg");
 }
 
 .art-form,
@@ -366,6 +366,10 @@
   100% {
     opacity: 100%;
   }
+}
+
+.user-form {
+  margin: 1.5rem;
 }
 
 .favorites-form {

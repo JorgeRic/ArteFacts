@@ -4,29 +4,26 @@
 
 <div class="form-container-users">
   <form class="user-form" action="/auth/login" method="POST">
-    <div class="form-grup">
-      <label for="username" class="hidden-label">Username</label>
-      {{#if formData.length}}
-      <input type="text" id="username" name="username" placeholder="Username" class="form-input"
-        value="{{formData.[0]}}">
-      {{else}}
-      <input type="text" id="username" name="username" placeholder="Username" class="form-input">
-      {{#if messages.length}}
-      <ul class="validation">
-        {{#each messages}}<li>{{this}}</li>{{/each}}
-      </ul>
-      {{/if}}
-      {{/if}}
-    </div>
-    <div class="form-grup">
-      <label class="hidden-label" for="password">Password</label>
-      <input type="text" id="password" name="password" placeholder="Password" class="form-input">
-      {{#if messages.length}}
-      <ul class="validation">
-        {{#each messages}}<li>{{this}}</li>{{/each}}
-      </ul>
-      {{/if}}
-    </div>
-    <button type="submit" class="btn-filled">Login</button>
+    <label for="username" class="hidden-label">Tu nombre</label>
+    {{#if formData.length}}
+    <input type="text" id="username" name="username" placeholder="Tu nombre" class="form-input"
+      value="{{formData.[0]}}">
+    {{else}}
+    <input type="text" id="username" name="username" placeholder="Username" class="form-input">
+    {{#if messages.length}}
+    <ul class="validation">
+      {{#each messages}}<li>{{this}}</li>{{/each}}
+    </ul>
+    {{/if}}
+    {{/if}}
+
+    <label class="hidden-label" for="password">Contraseña</label>
+    <input type="text" id="password" name="password" placeholder="Contraseña" class="form-input">
+    {{#if messages.length}}
+    <ul class="validation">
+      {{#each messages}}<li>{{this}}</li>{{/each}}
+    </ul>
+    {{/if}}
+    <button type="submit" class="btn-filled">Iniciar sesión</button>
   </form>
 </div>

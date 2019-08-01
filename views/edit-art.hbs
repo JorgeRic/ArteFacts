@@ -2,21 +2,25 @@
   <h2 class="main-heading">Editar info</h2>
 </section>
 
-<form class="art-form" action="/arts/{{_id}}/edit-art" method="POST" enctype="multipart/form-data">
-  <label for="author"><input type="text" name="author" value={{author}}></label>
-  <label for="title"><input type="text" name="title" value={{title}}></label>
-  <label for="contact"><input type="text" name="contact" value={{contact}}></label>
-  <label for="art-type">Tipo de arte</label>
-  <select id="art-type" name="artType">
-    <option value={{artType}} selected>{{artType}}</option>
-    <option value="Pintura">Pintura</option>
-    <option value="Fotografía">Fotografía</option>
-    <option value="Escultura">Escultura</option>
-    <option value="Ilustración">Ilustración</option>
-    <option value="Collage">Collage</option>
-  </select>
+<div class="form-container-art">
+  <form class="art-form" action="/arts/{{_id}}/edit-art" method="POST" enctype="multipart/form-data">
+    <label for="author"><input type="text" name="author" value={{author}}></label>
+    <label for="title"><input type="text" class="input-art-title" name="title" value={{title}}></label>
+    <label for="contact"><input type="text" name="contact" value={{contact}}></label>
+    <label for="art-type">Tipo de arte</label>
+    <select id="art-type" name="artType">
+      <option value={{artType}} selected>{{artType}}</option>
+      <option value="Pintura">Pintura</option>
+      <option value="Fotografía">Fotografía</option>
+      <option value="Escultura">Escultura</option>
+      <option value="Ilustración">Ilustración</option>
+      <option value="Collage">Collage</option>
+    </select>
 
-  <label><input type="file" name="image" placeholder="Sube la imagen del arte"></label>
-  <button type="submit">Actualizar datos</button>
-  <img src="{{image}}">
-</form>
+    <label for="image" class="hidden-label"><input type="file" class="input-attatch" name="image"
+        placeholder="Sube la imagen de la obra"><span class="btn-outlined">Subir
+        imagen</span></label>
+    <button type="submit" class="btn-filled">Actualizar datos</button>
+    <img src="{{image}}">
+  </form>
+</div>

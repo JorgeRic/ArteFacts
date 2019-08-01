@@ -76,6 +76,16 @@ router.post('/:id/edit-art', parser.single('image'), async (req, res, next) => {
   }
 });
 
+router.get('/search', async (req, res, next) => {
+  try {
+    const artType = req.query.artType;
+    const arts = await Art.find({ artType });
+    res.render('index', { arts });
+  } catch (error) {
+    next(error);
+  }
+});
+
 // Delete art
 router.post('/:id/delete', async (req, res, next) => {
   try {

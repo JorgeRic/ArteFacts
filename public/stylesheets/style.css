@@ -295,8 +295,6 @@ select.search-bar {
 
 /* CARDS STYLES */
 .card {
-  display: flex;
-  flex-flow: row wrap;
   background-color: var(--pattens-blue);
   margin-bottom: .5rem;
 }

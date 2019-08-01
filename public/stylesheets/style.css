@@ -443,16 +443,6 @@ select::-ms-expand {
   height: 4.5rem;
 }
 
-.label-attatch {
-  position: relative;
-}
-
-.btn-upload {
-  position: absolute;
-  top: 29%;
-  right: 22%;
-}
-
 input[file],
 .input-attatch {
   font: 400 .875rem 'Tiempos Headline Light';
@@ -461,7 +451,6 @@ input[file],
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  text-indent: 200%;
   overflow: hidden;
 }
 

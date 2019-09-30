@@ -15,7 +15,6 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const artsRouter = require('./routes/arts');
-// const apiRouter = require('./routes/api');
 
 const app = express();
 
@@ -60,7 +59,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/arts', artsRouter);
-// app.use('/api', apiRouter);
 
 // -- 404 and error handler
 app.use((req, res, next) => {

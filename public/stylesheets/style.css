@@ -126,6 +126,11 @@
   border: 1px solid var(--cape-cod);
 }
 
+/* search btn */
+.btn-search {
+  font-size: .875rem;
+}
+
 /* LAYOUT */
 .header, 
 .footer-brand,
@@ -238,6 +243,8 @@
 }
 select.search-bar {
   margin-bottom: 0;
+  font-size: .75rem;
+  line-height: 1.6;
 }
 
 .select-input.search {
@@ -288,7 +295,7 @@ select.search-bar {
 /* CARDS STYLES */
 .card {
   background-color: var(--pattens-blue);
-  margin-bottom: .5rem;
+  margin-bottom: 1.5rem;
 }
 
 .card-image {
@@ -323,7 +330,7 @@ select.search-bar {
 }
 
 .card-category {
-  margin-right: 1rem;
+  margin: 0 1rem 1rem 0;
   color: var(--deep-cerulean);
 }
 
@@ -337,7 +344,6 @@ select.search-bar {
 /* FORM STYLES */
 
 /* login-signup */
-
 
 .form-container-art,
 .form-container-edit-art,
